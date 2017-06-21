@@ -231,6 +231,7 @@ int main(int argc, char **argv)
     cv::imshow("Output", binaryMat);
 	*/
 
+
 			rec.Record(frame);
 			location.Update(frame);	
 
