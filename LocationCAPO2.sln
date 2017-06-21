@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Create_Marker", "Create_Marker\Create_Marker.vcxproj", "{E8D4C5CD-BD23-4C8C-9CE9-BB760B571378}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Simple", "Simple\Simple.vcxproj", "{90DE3FCB-0CD1-47DE-9394-79DB56FEA816}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CalibrationOpenCV", "CalibrationOpenCV\CalibrationOpenCV.vcxproj", "{6AE66CE9-5FA6-4DAF-B676-ED72DA8B8C6A}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CalibrationAruco", "CalibrationAruco\CalibrationAruco.vcxproj", "{08A2DE52-A2F6-4A00-A895-75A9D50D9D20}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BoardAruco", "BoardAruco\BoardAruco.vcxproj", "{CA914235-E7D8-4666-B9C0-251F0A451117}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ArucoCreateBoard", "ArucoCreateBoard\ArucoCreateBoard.vcxproj", "{4B891E30-FDFD-4355-9EDA-F2D9643C144D}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ArucoLocation", "ArucoLocation\ArucoLocation.vcxproj", "{8A69005A-36EC-4AEC-9A20-D44EEAD9717B}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ArucoTest", "ArucoTest\ArucoTest.vcxproj", "{EAE6291D-2488-4616-8EE1-9E0E37E1E11D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E8D4C5CD-BD23-4C8C-9CE9-BB760B571378}.Debug|Win32.ActiveCfg = Debug|Win32
+		{E8D4C5CD-BD23-4C8C-9CE9-BB760B571378}.Release|Win32.ActiveCfg = Release|Win32
+		{E8D4C5CD-BD23-4C8C-9CE9-BB760B571378}.Release|Win32.Build.0 = Release|Win32
+		{90DE3FCB-0CD1-47DE-9394-79DB56FEA816}.Debug|Win32.ActiveCfg = Debug|Win32
+		{90DE3FCB-0CD1-47DE-9394-79DB56FEA816}.Release|Win32.ActiveCfg = Release|Win32
+		{90DE3FCB-0CD1-47DE-9394-79DB56FEA816}.Release|Win32.Build.0 = Release|Win32
+		{6AE66CE9-5FA6-4DAF-B676-ED72DA8B8C6A}.Debug|Win32.ActiveCfg = Debug|Win32
+		{6AE66CE9-5FA6-4DAF-B676-ED72DA8B8C6A}.Release|Win32.ActiveCfg = Release|Win32
+		{6AE66CE9-5FA6-4DAF-B676-ED72DA8B8C6A}.Release|Win32.Build.0 = Release|Win32
+		{08A2DE52-A2F6-4A00-A895-75A9D50D9D20}.Debug|Win32.ActiveCfg = Debug|Win32
+		{08A2DE52-A2F6-4A00-A895-75A9D50D9D20}.Release|Win32.ActiveCfg = Release|Win32
+		{08A2DE52-A2F6-4A00-A895-75A9D50D9D20}.Release|Win32.Build.0 = Release|Win32
+		{CA914235-E7D8-4666-B9C0-251F0A451117}.Debug|Win32.ActiveCfg = Debug|Win32
+		{CA914235-E7D8-4666-B9C0-251F0A451117}.Release|Win32.ActiveCfg = Release|Win32
+		{CA914235-E7D8-4666-B9C0-251F0A451117}.Release|Win32.Build.0 = Release|Win32
+		{4B891E30-FDFD-4355-9EDA-F2D9643C144D}.Debug|Win32.ActiveCfg = Debug|Win32
+		{4B891E30-FDFD-4355-9EDA-F2D9643C144D}.Release|Win32.ActiveCfg = Release|Win32
+		{4B891E30-FDFD-4355-9EDA-F2D9643C144D}.Release|Win32.Build.0 = Release|Win32
+		{8A69005A-36EC-4AEC-9A20-D44EEAD9717B}.Debug|Win32.ActiveCfg = Debug|Win32
+		{8A69005A-36EC-4AEC-9A20-D44EEAD9717B}.Debug|Win32.Build.0 = Debug|Win32
+		{8A69005A-36EC-4AEC-9A20-D44EEAD9717B}.Release|Win32.ActiveCfg = Release|Win32
+		{8A69005A-36EC-4AEC-9A20-D44EEAD9717B}.Release|Win32.Build.0 = Release|Win32
+		{EAE6291D-2488-4616-8EE1-9E0E37E1E11D}.Debug|Win32.ActiveCfg = Debug|Win32
+		{EAE6291D-2488-4616-8EE1-9E0E37E1E11D}.Release|Win32.ActiveCfg = Release|Win32
+		{EAE6291D-2488-4616-8EE1-9E0E37E1E11D}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
