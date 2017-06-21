@@ -183,6 +183,10 @@ int main(int argc, char **argv)
 		string programStartUp = argv[0];
 		string source = argv[1];
 
+		cout << programStartUp << endl;
+		cout << source << endl;
+ 
+
 		VideoCapture inputVideo;
 
 		if(isParam(source))

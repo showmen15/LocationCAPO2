@@ -18,7 +18,7 @@ ArucoLocation:: ArucoLocation(string cameraParams,Size inputImageSize)
 	{
 		RobotLocation[i].set_robotid(i);
 
-		sIP = "192.168.2.201"; //"192.168.2.20" + to_string(i);
+		sIP = "192.168.2.20" + to_string(i); //"192.168.2.201"; //
 
 		RobotClient[i] = new UdpClient(sIP.c_str(),port);
 	}
