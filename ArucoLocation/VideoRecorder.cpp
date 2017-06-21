@@ -59,8 +59,8 @@ void VideoRecorder::StopRecord()
 	{
 		recording = false;
 		outputVideo->release();
-		delete outputVideo;
-		outputVideo = NULL;
+		//delete outputVideo;
+		//outputVideo = NULL;
 
 		cout << "Finished writing" << endl;
 	}

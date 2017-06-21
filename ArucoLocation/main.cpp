@@ -240,7 +240,7 @@ int main(int argc, char **argv)
 			key = waitKey(42);
 			if(key >= 0)
 			{
-				switch (key)
+			switch (key)
 				{
 					//S|s -> start recording
 				case 83:
@@ -276,35 +276,40 @@ int main(int argc, char **argv)
 						break;
 					}
 
-					//strzalka up
+				//strzalka up | num 8;
+				case 56:
 				case 2490368:
 					{
 						location.AddYp(-1);
 						break;
 					}
 
-					//strzalka down
+				//strzalka down | num 2
+				case 50:
 				case 2621440:
 					{
 						location.AddYp(1);
 						break;
 					}
 
-					//strzalka left
+				//strzalka left | num 4
+				case 52:
 				case 2424832:
 					{
 						location.AddXp(-1);
 						break;
 					}
 
-					//strzalka right
+				//strzalka right | num 6
+				case 54: 
 				case 2555904:
 					{
 						location.AddXp(1);
 						break;
 					}
 
-					//F2
+					//F2 | q
+				case 113: 
 				case 7405568: 
 					{
 					inputVideo.set(CV_CAP_PROP_SETTINGS, 1);
