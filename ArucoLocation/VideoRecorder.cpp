@@ -58,7 +58,10 @@ void VideoRecorder::StopRecord()
 	if(recording)
 	{
 		recording = false;
-		outputVideo->release();
+		outputVideo->~VideoWriter();
+		
+		//outputVideo->release();
+
 		//delete outputVideo;
 		//outputVideo = NULL;
 

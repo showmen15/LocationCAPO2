@@ -173,20 +173,40 @@ bool isParam(string line)
    return 0;
 
 }
+//#include <string>
+//#include <windows.h>
+//#include <iostream>
+
+ /*std::string getexepath()
+ {
+	 char result[MAX_PATH];
+	 return std::string(result, GetModuleFileName(NULL, result, MAX_PATH));
+ }*/
+
+ //int main(int argc, char **argv)
+ //{
+	// char* path;
+	// _get_pgmptr(&path);
+	// string programStartUp = path;
 
 
+	// printf("Hallo");
+	// cout << programStartUp << endl; // Example output: C:/Projects/Hello/World.exe
+	// printf("End");
+ //}
 
 int main(int argc, char **argv)
 {
 	try
 	{
-		string programStartUp = argv[0];
+		char* path;
+		_get_pgmptr(&path);
+		string programStartUp = path;
 		string source = argv[1];
 
 		cout << programStartUp << endl;
 		cout << source << endl;
  
-
 		VideoCapture inputVideo;
 
 		if(isParam(source))
@@ -217,24 +237,6 @@ int main(int argc, char **argv)
 		for(;working;)
 		{
 			inputVideo >> frame; // get a new frame from camera
-			/*
-			//Grayscale matrix
-    cv::Mat grayscaleMat (frame.size(), CV_8U);
-
-    //Convert BGR to Gray
-    cv::cvtColor( frame, grayscaleMat, CV_BGR2GRAY );
-
-    //Binary image
-    cv::Mat binaryMat(grayscaleMat.size(), grayscaleMat.type());
-
-    //Apply thresholding
-    cv::threshold(grayscaleMat, binaryMat, 100, 255, cv::THRESH_BINARY);
-
-    //Show the results
-    
-    cv::imshow("Output", binaryMat);
-	*/
-
 
 			rec.Record(frame);
 			location.Update(frame);	
@@ -335,3 +337,22 @@ int main(int argc, char **argv)
 }
 
 
+
+
+/*
+//Grayscale matrix
+cv::Mat grayscaleMat (frame.size(), CV_8U);
+
+//Convert BGR to Gray
+cv::cvtColor( frame, grayscaleMat, CV_BGR2GRAY );
+
+//Binary image
+cv::Mat binaryMat(grayscaleMat.size(), grayscaleMat.type());
+
+//Apply thresholding
+cv::threshold(grayscaleMat, binaryMat, 100, 255, cv::THRESH_BINARY);
+
+//Show the results
+
+cv::imshow("Output", binaryMat);
+*/
