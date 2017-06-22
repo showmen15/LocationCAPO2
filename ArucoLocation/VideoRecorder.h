@@ -23,7 +23,7 @@ using namespace cv;
 class VideoRecorder
 {
 private:
-	VideoWriter* outputVideo; 
+	VideoWriter outputVideo; 
 
 	int CodecType;
 	double Fps;

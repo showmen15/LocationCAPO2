@@ -17,7 +17,7 @@ VideoRecorder::VideoRecorder(int codecType,double fps,Size inputSize,string prog
 
 VideoRecorder::~VideoRecorder()
 {
-	if(outputVideo != NULL)
+	if(outputVideo.isOpened())
 		StopRecord();
 }
 
@@ -33,10 +33,10 @@ void VideoRecorder::StartRecord()
 
 void VideoRecorder::StartRecord(string sFileName)
 {
-	outputVideo = new VideoWriter();
-	outputVideo->open(sFileName.c_str(),CodecType,Fps,InputSize,true);
+	//outputVideo() = new VideoWriter();
+	outputVideo.open(sFileName.c_str(),CodecType,Fps,InputSize,true);
 
-	if (!outputVideo->isOpened())
+	if (!outputVideo.isOpened())
 	{
 		cout  << "Could not open the output video for write:" << sFileName  << endl;
 	}
@@ -50,7 +50,7 @@ void VideoRecorder::StartRecord(string sFileName)
 void VideoRecorder::Record(Mat frame)
 {
 	if(recording)
-		outputVideo->write(frame);
+		outputVideo.write(frame);
 }
 
 void VideoRecorder::StopRecord()
@@ -58,7 +58,7 @@ void VideoRecorder::StopRecord()
 	if(recording)
 	{
 		recording = false;
-		outputVideo->~VideoWriter();
+		outputVideo.~VideoWriter();
 		
 		//outputVideo->release();
 
