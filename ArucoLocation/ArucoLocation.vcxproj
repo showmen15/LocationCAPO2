@@ -89,6 +89,7 @@
     <ClInclude Include="ArucoLocation.h" />
     <ClInclude Include="ArucoLocation.pb.h" />
     <ClInclude Include="UdpClientLinux.h" />
+    <ClInclude Include="UdpServer.h" />
     <ClInclude Include="VideoRecorder.h" />
     <ClInclude Include="VideoRecorderUDP.pb.h" />
   </ItemGroup>
@@ -97,6 +98,7 @@
     <ClCompile Include="ArucoLocation.pb.cc" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="UdpClientLinux.cpp" />
+    <ClCompile Include="UdpServer.cpp" />
     <ClCompile Include="VideoRecorder.cpp" />
     <ClCompile Include="VideoRecorderUDP.pb.cc" />
   </ItemGroup>

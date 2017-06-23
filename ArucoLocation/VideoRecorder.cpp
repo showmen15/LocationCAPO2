@@ -13,7 +13,7 @@ VideoRecorder::VideoRecorder(int codecType,double fps,Size inputSize,string prog
 	InputSize = inputSize;
 
 	recording = false;
-	client = new UdpClient("127.0.0.1", 9999);
+	remoteControl = new UdpServer(9999);
 
 	working = true;
 	thr = thread(&VideoRecorder::run, this);
@@ -25,6 +25,7 @@ VideoRecorder::~VideoRecorder()
 		StopRecord();
 
 	working = false;
+	delete remoteControl;
 }
 
 void VideoRecorder::run()
@@ -34,9 +35,17 @@ void VideoRecorder::run()
 
 	while (working)
 	{
-		buf = client->Receive();
+		buf = remoteControl->Receive();
 		
-		rec.ParseFromArray(buf, client->ReciveLen);
+		rec.ParseFromArray(buf, remoteControl->ReciveLen);
+
+		if (rec.isend())
+			StopRecord();
+		else
+		{
+			string sPath = sOutputDir + rec.filename() + getTimeAndFormat() + ".avi";
+			startRecord(sPath);
+		}
 	}
 }
 
@@ -44,7 +53,12 @@ void VideoRecorder::StartRecord()
 { 
 	string sPath = sOutputDir + getTimeAndFormat() +  ".avi"; // "test1.avi"; //"C:\\git\\LocationCAPO\\ArucoLocation\\Debug\\test7.avi"; //".\\Output\\test.mp4"; //+ getTimeAndFormat() + ".mp4"; //wygeneruj nazwe pliku w katalogu gdzie program jest
 
-	if(IsRecord())
+	startRecord(sPath);
+}
+
+void VideoRecorder::startRecord(string sPath)
+{
+	if (IsRecord())
 		StopRecord();
 
 	StartRecord(sPath);

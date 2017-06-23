@@ -3,18 +3,13 @@
 
 #include <iostream>
 #include <string>
-#include <time.h>
-#include <iostream>
-#include <stdio.h>
-#include <windows.h>
-#include <stdio.h>
-#include <direct.h>
 #include <thread>
+#include <direct.h>
 
 #include <opencv2/core/core.hpp>        // Basic OpenCV structures (cv::Mat)
 #include <opencv2/highgui/highgui.hpp>  // Video write
-#include "UdpClientLinux.h"
 #include "VideoRecorderUDP.pb.h"
+#include "UdpServer.h"
 
 using namespace std;
 using namespace cv;
@@ -44,11 +39,11 @@ private:
 
 	thread thr;
 
-
 	bool working;
 	void run();
+	UdpServer* remoteControl;
 
-	UdpClient* client;
+	void startRecord(string sPath);
 
 public:
 	VideoRecorder(int codecType,double fps,Size inputSize,string programStartUp);
