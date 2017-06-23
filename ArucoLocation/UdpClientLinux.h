@@ -21,6 +21,7 @@ public:
 
 	char* Receive();
 	void Send(string dgram);
+	int ReciveLen;
 
 
 private:

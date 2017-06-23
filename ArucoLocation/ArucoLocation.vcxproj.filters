@@ -26,6 +26,9 @@
     <ClInclude Include="VideoRecorder.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="VideoRecorderUDP.pb.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ArucoLocation.cpp">
@@ -41,6 +44,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="VideoRecorder.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="VideoRecorderUDP.pb.cc">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

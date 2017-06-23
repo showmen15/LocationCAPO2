@@ -13,12 +13,31 @@ VideoRecorder::VideoRecorder(int codecType,double fps,Size inputSize,string prog
 	InputSize = inputSize;
 
 	recording = false;
+	client = new UdpClient("127.0.0.1", 9999);
+
+	working = true;
+	thr = thread(&VideoRecorder::run, this);
 }
 
 VideoRecorder::~VideoRecorder()
 {
 	if(outputVideo.isOpened())
 		StopRecord();
+
+	working = false;
+}
+
+void VideoRecorder::run()
+{
+	char* buf;
+	VideoRecorderRemote::VideoRecorderUDP rec;
+
+	while (working)
+	{
+		buf = client->Receive();
+		
+		rec.ParseFromArray(buf, client->ReciveLen);
+	}
 }
 
 void VideoRecorder::StartRecord()

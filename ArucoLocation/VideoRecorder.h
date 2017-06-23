@@ -9,9 +9,12 @@
 #include <windows.h>
 #include <stdio.h>
 #include <direct.h>
+#include <thread>
 
 #include <opencv2/core/core.hpp>        // Basic OpenCV structures (cv::Mat)
 #include <opencv2/highgui/highgui.hpp>  // Video write
+#include "UdpClientLinux.h"
+#include "VideoRecorderUDP.pb.h"
 
 using namespace std;
 using namespace cv;
@@ -39,6 +42,14 @@ private:
 
 	string sOutputDir;
 
+	thread thr;
+
+
+	bool working;
+	void run();
+
+	UdpClient* client;
+
 public:
 	VideoRecorder(int codecType,double fps,Size inputSize,string programStartUp);
 	~VideoRecorder(void);
@@ -48,6 +59,8 @@ public:
 	void Record(Mat frame);
 	void StopRecord();
 	bool IsRecord();
+
+
 };
 
 #endif /* VIDEORECORDER_H_ */

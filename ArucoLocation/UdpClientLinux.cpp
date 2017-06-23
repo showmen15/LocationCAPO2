@@ -32,7 +32,7 @@ char* UdpClient::Receive()
 {
 	memset(buf,'\0', BUF_SIZE);
 
-	if (recvfrom(s, buf, BUF_SIZE, 0, (struct sockaddr *) &si_other, &slen) == SOCKET_ERROR)
+	if (recvfrom(s, buf, BUF_SIZE, 0, (struct sockaddr *) &si_other, &ReciveLen) == SOCKET_ERROR)
 		err("recvfrom() failed with error code : %d" + WSAGetLastError());
 
 	return buf;

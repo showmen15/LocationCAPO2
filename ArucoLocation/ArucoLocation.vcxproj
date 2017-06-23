@@ -90,6 +90,7 @@
     <ClInclude Include="ArucoLocation.pb.h" />
     <ClInclude Include="UdpClientLinux.h" />
     <ClInclude Include="VideoRecorder.h" />
+    <ClInclude Include="VideoRecorderUDP.pb.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ArucoLocation.cpp" />
@@ -97,6 +98,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="UdpClientLinux.cpp" />
     <ClCompile Include="VideoRecorder.cpp" />
+    <ClCompile Include="VideoRecorderUDP.pb.cc" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="out_camera_params.yml">

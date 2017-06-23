@@ -271,6 +271,7 @@ int main(int argc, char **argv)
 						working = false;
 						rec.StopRecord();
 						location.Stop();
+						exit(1);
 						break;
 					}
 
