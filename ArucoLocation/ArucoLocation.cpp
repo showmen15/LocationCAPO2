@@ -59,7 +59,7 @@ void ArucoLocation::run()
 
 			for (unsigned int i = 0; i < markerCorners.size(); i++) // for each marker, draw info and its boundaries in the image
 			{
-				if (markerIds[i] > ROBOTS_COUNT)
+				if (markerIds[i] >= ROBOTS_COUNT)
 					continue;
 
 				currentLocation = RobotLocation[markerIds[i]];
