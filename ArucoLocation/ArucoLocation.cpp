@@ -4,10 +4,12 @@
 
 ArucoLocation::ArucoLocation(string cameraParams, Size inputImageSize)
 {
+	PI = 3.141592653589793;
 	MarkerSize = 1000; //wielkosc markera px
 	MarkerSizeM = 0.2645833333; //wielkosc markera w m
 	//CamParam.readFromXMLFile(cameraParams); // read camera parameters
 	InputImageSize = inputImageSize;
+
 
 	dictionary = cv::aruco::getPredefinedDictionary(cv::aruco::DICT_ARUCO_ORIGINAL);
 
@@ -124,7 +126,7 @@ void ArucoLocation::set_location2(vector< Point2f > marker, int id, Aruco::Aruco
 
 	//double alfa = Vxl / Vl;
 
-	double alfa = atan2(Vyl, Vxl);
+	double alfa = atan2(Vyl, Vxl) + (PI / 2);
 
 	location->set_robotid(id); //robotID
 	location->set_x(Xlm); //pozyajca w metrach
@@ -174,8 +176,10 @@ void ArucoLocation::draw2dAxis(Mat &Image, int  Xp, int  Yp)
 }
 void ArucoLocation::directionVector(vector< Point2f > marker, Mat &in, double alfa)
 {
+	alfa -= PI / 2;
+	
 	int lineWidth = 2;
-	float arrowLength = 10.0;
+	float arrowLength = 50.0;
 	Point2f arrowEnd;
 	Point2f center(((marker[0].x + marker[2].x) / 2), ((marker[0].y + marker[2].y) / 2));
 

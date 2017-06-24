@@ -42,6 +42,7 @@
 
 #define ROBOTS_COUNT 10
 
+
 using namespace std;
 using namespace cv;
 using namespace aruco;
@@ -51,7 +52,7 @@ class  ArucoLocation
 private:
 	Aruco::ArucoLocation RobotLocation[ROBOTS_COUNT];
 	UdpClient *RobotClient[ROBOTS_COUNT];
-
+	double PI;
 
 	void run();
 	bool working;
