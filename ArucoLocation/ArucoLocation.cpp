@@ -5,8 +5,8 @@
 ArucoLocation::ArucoLocation(string cameraParams, Size inputImageSize)
 {
 	PI = 3.141592653589793;
-	MarkerSize = 1000; //wielkosc markera px
-	MarkerSizeM = 0.2645833333; //wielkosc markera w m
+	MarkerSize = 1000;//643;//  //wielkosc markera px
+	MarkerSizeM = 0.2645833333;//0.17;// //wielkosc markera w m
 	//CamParam.readFromXMLFile(cameraParams); // read camera parameters
 	InputImageSize = inputImageSize;
 

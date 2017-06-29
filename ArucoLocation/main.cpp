@@ -231,8 +231,13 @@ int main(int argc, char **argv)
 		Mat frame;
 		namedWindow("frame",1);
 		//cv::namedWindow("Output", cv::WINDOW_AUTOSIZE);
+		namedWindow("rot", 1);
+
 
 		int zaczytane = 20;
+
+		
+		bool init = false;
 
 		for(;working;)
 		{
@@ -241,7 +246,24 @@ int main(int argc, char **argv)
 			rec.Record(frame);
 			location.Update(frame);	
 
+
+			/*double angle = -90;
+
+			// get rotation matrix for rotating the image around its center
+			cv::Point2f center(frame.cols / 2.0, frame.rows / 2.0);
+			cv::Mat rot = cv::getRotationMatrix2D(center, angle, 1.0);
+			// determine bounding rectangle
+			cv::Rect bbox = cv::RotatedRect(center, frame.size(), angle).boundingRect();
+			// adjust transformation matrix
+			rot.at<double>(0, 2) += bbox.width / 2.0 - center.x;
+			rot.at<double>(1, 2) += bbox.height / 2.0 - center.y;
+
+			cv::Mat dst;
+			cv::warpAffine(frame, dst, rot, bbox.size());
+			imshow("rot", dst);
+			*/
 			imshow("frame", frame);
+
 
 			key = waitKey(42);
 			if(key >= 0)
