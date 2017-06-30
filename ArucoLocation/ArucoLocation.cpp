@@ -29,8 +29,8 @@ ArucoLocation::ArucoLocation(string cameraParams, Size inputImageSize)
 
 	thr = thread(&ArucoLocation::run, this);
 
-	Xp = 0;
-	Yp = inputImageSize.height;
+	Xp = 11;
+	Yp = 472;//inputImageSize.height;
 }
 
 ArucoLocation::~ArucoLocation()

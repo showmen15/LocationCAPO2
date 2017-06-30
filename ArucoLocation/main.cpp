@@ -247,7 +247,7 @@ int main(int argc, char **argv)
 			location.Update(frame);	
 
 
-			/*double angle = -90;
+			double angle = -90;
 
 			// get rotation matrix for rotating the image around its center
 			cv::Point2f center(frame.cols / 2.0, frame.rows / 2.0);
@@ -261,7 +261,7 @@ int main(int argc, char **argv)
 			cv::Mat dst;
 			cv::warpAffine(frame, dst, rot, bbox.size());
 			imshow("rot", dst);
-			*/
+			
 			imshow("frame", frame);
 
 
