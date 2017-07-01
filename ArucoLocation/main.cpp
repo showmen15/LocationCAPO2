@@ -217,6 +217,10 @@ int main(int argc, char **argv)
 		if(!inputVideo.isOpened())  // check if we succeeded    
 			return -1;
 
+		//settings
+		inputVideo.set(CV_CAP_PROP_FRAME_WIDTH,1920);
+		inputVideo.set(CV_CAP_PROP_FRAME_HEIGHT,1080);
+
 		bool working = true;
 		int key;
 		string sCameraParams =  ".\\out_camera_params.yml";
@@ -229,9 +233,9 @@ int main(int argc, char **argv)
 		VideoRecorder rec(CodecType,Fps,InputSize,programStartUp);
 
 		Mat frame;
-		namedWindow("frame",1);
+		namedWindow("frame",cv::WINDOW_NORMAL);
 		//cv::namedWindow("Output", cv::WINDOW_AUTOSIZE);
-		namedWindow("rot", 1);
+		namedWindow("rot", cv::WINDOW_NORMAL);
 
 
 		int zaczytane = 20;
@@ -245,7 +249,7 @@ int main(int argc, char **argv)
 
 			rec.Record(frame);
 			location.Update(frame);	
-
+			/*
 
 			double angle = -90;
 
@@ -261,7 +265,7 @@ int main(int argc, char **argv)
 			cv::Mat dst;
 			cv::warpAffine(frame, dst, rot, bbox.size());
 			imshow("rot", dst);
-			
+			*/
 			imshow("frame", frame);
 
 
@@ -341,6 +345,14 @@ int main(int argc, char **argv)
 				case 113: 
 				case 7405568: 
 					{
+
+					cout << inputVideo.get(CV_CAP_PROP_FRAME_WIDTH) << endl;
+					cout << inputVideo.get(CV_CAP_PROP_FRAME_HEIGHT) << endl;
+					cout << inputVideo.get(CV_CAP_PROP_FPS) << endl;
+					cout << inputVideo.get(CV_CAP_PROP_FORMAT) << endl;
+
+					cout << inputVideo.get(CV_CAP_PROP_SETTINGS) << endl;
+
 					inputVideo.set(CV_CAP_PROP_SETTINGS, 1);
 					break;
 					}

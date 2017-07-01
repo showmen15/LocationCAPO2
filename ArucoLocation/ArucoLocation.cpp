@@ -44,7 +44,7 @@ void ArucoLocation::run()
 	UdpClient* curentRobotClient;
 
 	string output;
-	cv::namedWindow("in", 1);
+	cv::namedWindow("in", cv::WINDOW_NORMAL);
 	//	cv::namedWindow("thes", 1);
 
 	while (working)
