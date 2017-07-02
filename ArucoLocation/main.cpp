@@ -197,6 +197,16 @@ bool isParam(string line)
 
 int main(int argc, char **argv)
 {
+	//synchronizacja czasu
+	try
+	{
+		int i = system("w32tm /resync");
+	}
+	catch (Exception ex)
+	{
+		cout << ex.what();
+	}
+
 	try
 	{
 		char* path;

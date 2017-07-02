@@ -63,6 +63,7 @@
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>.\protoc\lib\libprotobuf.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <UACExecutionLevel>HighestAvailable</UACExecutionLevel>
     </Link>
     <PostBuildEvent>
       <Command>xcopy /y "$(ProjectDir)out_camera_params.yml" "$(ProjectDir)$(Configuration)\*" </Command>
