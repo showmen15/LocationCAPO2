@@ -228,8 +228,8 @@ int main(int argc, char **argv)
 			return -1;
 
 		//settings
-		inputVideo.set(CV_CAP_PROP_FRAME_WIDTH,1920);
-		inputVideo.set(CV_CAP_PROP_FRAME_HEIGHT,1080);
+		//inputVideo.set(CV_CAP_PROP_FRAME_WIDTH,1920);
+		//inputVideo.set(CV_CAP_PROP_FRAME_HEIGHT,1080);
 
 		bool working = true;
 		int key;
