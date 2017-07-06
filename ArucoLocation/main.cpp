@@ -236,7 +236,7 @@ int main(int argc, char **argv)
 		string sCameraParams =  ".\\out_camera_params.yml";
 
 		int CodecType = CV_FOURCC('M', 'J', 'P', 'G'); //CV_FOURCC('H', '2', '6', '3'); // Get Codec Type- Int form
-		double Fps = 15; //25.0
+		double Fps = 24; //25.0
 		Size InputSize = Size((int) inputVideo.get(CV_CAP_PROP_FRAME_WIDTH), (int) inputVideo.get(CV_CAP_PROP_FRAME_HEIGHT)); // Acquire input size
 
 		ArucoLocation location(sCameraParams,InputSize); //okiekt lokalizacji
@@ -279,7 +279,7 @@ int main(int argc, char **argv)
 			imshow("frame", frame);
 
 
-			key = waitKey(42);
+			key = waitKey(41);
 			if(key >= 0)
 			{
 			switch (key)
